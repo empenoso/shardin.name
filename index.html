@@ -41,6 +41,38 @@
         .collapsing {
             margin-top: 15px;
         }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            color: #fff;
+            opacity: 0.9;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .social-link:hover {
+            opacity: 1;
+            color: #fff;
+        }
+
+        .telegram-link {
+            background-color: #2CA5E0;
+        }
+
+        .vk-link {
+            background-color: #4680C2;
+        }
+
+        .facebook-link {
+            background-color: #1877F2;
+        }
+
+        .telegram-link img,
+        .vk-link img,
+        .facebook-link img {
+            width: 12px;
+            margin-right: 3px;
+        }        
     </style>
 
     <!-- Google Charts and JS -->
@@ -285,9 +317,13 @@
             Возраст: <script type="text/javascript">
                 document.write(calcAge('1984-5-1'));
             </script> лет <br>
-            Контакты: <a class="badge badge-danger" href="tg://resolve?domain=empenoso" role="button">Телеграм</a>,
-            <a target="_blank" rel="noopener noreferrer" class="badge badge-primary" href="https://vk.com/shardin_name" role="button">ВКонтакте</a>,
-            <a target="_blank" rel="noopener noreferrer" class="badge badge-info" href="https://www.facebook.com/shardin.name" role="button">Facebook</a>
+            Контакты: <a class="badge social-link telegram-link" href="tg://resolve?domain=empenoso" role="button"><img
+                    src="./images/telegram.svg" alt="Телеграм" /> Телеграм</a>,
+            <a target="_blank" rel="noopener noreferrer" class="badge social-link vk-link"
+                href="https://vk.com/shardin_name" role="button"><img src="./images/vk.svg" alt="ВКонтакте" /> ВКонтакте</a>,
+            <a target="_blank" rel="noopener noreferrer" class="badge social-link facebook-link"
+                href="https://www.facebook.com/shardin.name" role="button"><img src="./images/facebook.svg"
+                    alt="Facebook" /> Facebook</a>
         </p>
         <!-- Профессиональный опыт и образование -->
         <button class="btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#timeline"
