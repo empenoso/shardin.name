@@ -88,6 +88,11 @@
             width: 12px;
             margin-right: 3px;
         }
+
+        .info {
+            padding-left: 40px;
+            margin-bottom: 10px;
+        }
     </style>
 
     <!-- Google Charts and JS -->
@@ -107,6 +112,21 @@
                 })
             }
         }
+
+        function getBlockInfoForTimelines() {
+            var divContainer = document.createElement('div')
+            var divText = document.createElement('div')
+            var text = `Ниже Вы можете бесплатно скачать любую из моих опубликованных статей. Для этого нажмите на значок 💾
+            справа от названия материала. Также Вы можете принять участие в обсуждении интересных Вам тем, просто
+            перейдя по ссылке - комментарии есть у всех статей.`
+            
+            divContainer.className = 'container mt-3'
+            divText.className = 'info'
+            divText.innerHTML = text
+            divContainer.append(divText)
+
+            return divContainer
+        }
     </script>
 
     <!-- Timelines Google Charts -->
@@ -121,6 +141,7 @@
             var container = element[0];
             var chart = new google.visualization.Timeline(container);
             var dataTable = new google.visualization.DataTable();
+            var info = getBlockInfoForTimelines()
             google.visualization.events.addListener(chart, 'ready', function () {
                 afterDrawChart(element, resize)
             });
@@ -226,6 +247,7 @@
             };
 
             chart.draw(dataTable);
+            chart.container.prepend(info)
         }
     </script>
 
